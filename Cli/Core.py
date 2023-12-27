@@ -29,7 +29,7 @@ def convert_video(filename, from_format, to_format):
         try:
             vid = ffmpeg.input(filename)
             # Change filename to match new extension
-            export_filename = input_filename.split(".")[0] + "." + to_format
+            export_filename = filename.split(".")[0] + "." + to_format
             # Save video in new extension
             vid = ffmpeg.output(vid, export_filename)
             vid.run()
