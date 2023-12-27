@@ -3,19 +3,18 @@ import os
 from pydub import AudioSegment
 
 
-def foto_omzetter(invoer_bestandsnaam, uitvoer_map, invoer_map):
-    if invoer_bestandsnaam.lower().endswith(('.heic')):
-        file_path = os.path.join(invoer_map, invoer_bestandsnaam)
+def foto_omzetter(invoer_bestandsnaam: str, from_format: str, to_format:str):
+    if invoer_bestandsnaam.lower().endswith((from_format)):
         try:
-            with Image.open(file_path) as img:
-                # Maak bestandsnaam met jpeg inplaats van
-                uitvoer_bestandsnaam = invoer_bestandsnaam.split(".")[0] + ".jpeg"
+            with Image.open(invoer_bestandsnaam) as img:
+                # Maak bestandsnaam met juiste extensie
+                uitvoer_bestandsnaam = invoer_bestandsnaam.split(".")[0] + "." + to_format
 
-                # Sla de foto op in het JPEG-formaat met de nieuwe bestandsnaam.
-                img.save(os.path.join(uitvoer_map, uitvoer_bestandsnaam), 'JPEG')
+                # Sla de foto op in het nieuwe formaat met juiste extensie.
+                img.save(os.path.join(uitvoer_bestandsnaam), to_format)
 
         except Exception as e:
-            # Geef error weer voor debugging
+            # Geef error weer voor debugging.
             print(f"Error processing {invoer_bestandsnaam}: {str(e)}")
 
 
