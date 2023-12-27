@@ -38,7 +38,7 @@ def convert_video(filename, from_format, to_format):
             print(f"Error processing {filename}: {str(e)}")
 
 
-# Als de uitvoer_map niet bestaat, maak die dan.
+''''# Als de uitvoer_map niet bestaat, maak die dan.
 fileType = input("Image, Video or Audio?: ")
 input_file = input("Wat is de volledige naam van de file?: ")
 extension = input("Wat is de huidige extensie van de file?: ")
@@ -51,4 +51,4 @@ elif fileType == "Video":
 elif fileType == "Audio":
     muziek_omzetter(input_file, extension, expectedExtension)
 else:
-    print("We do not support this type of file yet, or u made a typo.")
+    print("We do not support this type of file yet, or u made a typo.")'''
