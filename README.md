@@ -1,6 +1,27 @@
 # UniConvert
-With this app, you can convert any file to a file with another extension. 
+<a href="README.md">Read this also in English.</a>
 
-To use: Place the .exe file in a folder with files u want to convert. 
-Run the exe and follow the steps in the prompt.
-The files should be converted and placed in the folder you're in.
+Met deze applicatie kan je jouw bestanden de juiste extensie en bestandsformaat geven.
+
+[![python](https://img.shields.io/badge/Python-3.9-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
+[![License: GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![Windows 11](https://img.shields.io/badge/Windows%2011-%230079d5.svg?style=for-the-badge&logo=Windows%2011&logoColor=white)
+<img src='https://img.shields.io/badge/PyCharm-000000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white' />
+
+### Medewerkers
+<a href="https://github.com/Kobiboy">Kobiboy</a>,   <a href="https://github.com/LeniBleux">Leni Bleux</a> en <a href="">Zander Ceunen</a>
+### Hoe gebruiken?
+1. Download de laatste release hier of van onze github pagina.
+2. Pak het zip bestand uit en plaats de UniConvert.exe file in de map met jouw bestanden.
+3. Dubbelklik en volg de instructies op het scherm.
+
+### Een simpel voorbeeld
+1. Plaats de UniConvert in de map met je bestanden. In dit voorbeeld een mapje met foto's. 
+2. Je wordt begroet door dit scherm. # hier moet nog een foto.
+3. In dit geval kiezen we voor optie 3 want we willen graag foto's omzetten.
+4. Onze foto's zijn momenteel png, we zouden deze graag omzetten naar jpeg. We typen de nummers in en krijgen volgend resultaat:
+5. Als laatste kiezen we nog voor alle bestanden in onze map door 1 te typen. 
+6. Onze foto's zijn nu omgezet naar jpeg.
+
+### License
+<a href="https://www.gnu.org/licenses/gpl-3.0.nl.html">GPLv3</a>
