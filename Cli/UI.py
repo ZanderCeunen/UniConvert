@@ -1,5 +1,5 @@
 import Core
-
+import os
 
 class Numcheck:
     def picture(number):
@@ -14,9 +14,26 @@ class Numcheck:
         extensies = []
         return extensies[number]
 
+def getfilenames():
+    print("Hoe wil je de bestanden selecteren?")
+    print("""+---------------------------------------------------------------------+
+| 1) Neem alle bestanden in de huidige map met de opgegeven extensie. |
++---------------------------------------------------------------------+
+| 2) Ik geef zelf de bestand(s)naam(en) in                            |
++---------------------------------------------------------------------+
+    """)
+    while True:
+        keuze_bestandsmethode = int(input("Nummer:"))
+        if 3 > keuze_bestandsmethode > 0:
+            break
+        else:
+            print("Dit nummer is geen optie uit de lijst. Probeer opnieuw.")
+    if keuze_bestandsmethode == 1:
+         return os.listdir(os.path.dirname(os.path.realpath(__file__)))
+
+
 # Printing ASCII graphics.
-print("""                                                                                           
-                                                                                           
+print("""                                                                                                                                                                               
   ,----..                                                       ___                        
  /   /   \                                                    ,--.'|_                      
 |   :     :  ,---.        ,---,                      __  ,-.  |  | :,'             __  ,-. 
@@ -63,14 +80,16 @@ elif soort_bestand == 3:
             print("Dit is geen geldig nummer van een bestandsextensie. Probeer opnieuw")
     gekozen_input_formaat_extensie = Numcheck.picture(gekozen_input_formaat_nummer)
 
-    while True: #zet nummer om in extensie voor de uitvoer bestanden.
+    while True:
         gekozen_output_formaat_nummer = int(input("Welke extensie heeft/hebben het/de uitvoer bestand(en)? Nummer:"))
         if 10 > gekozen_output_formaat_nummer > 0:
             break
         else:
             print("Dit is geen geldig nummer van een bestandsextensie. Probeer opnieuw")
     gekozen_output_formaat_extensie = Numcheck.picture(gekozen_output_formaat_nummer)
-
+    bestanden = getfilenames()
+    for filename in bestanden:
+        Core.foto_omzetter(filename, gekozen_input_formaat_extensie, gekozen_output_formaat_extensie)
 
 elif soort_bestand == 4:
     print("")
