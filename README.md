@@ -1,5 +1,5 @@
 # UniConvert
-<a href="README.md">Read this also in English.</a>
+<a href="README_en.md">Read this also in English.</a>
 
 Met deze applicatie kan je jouw bestanden de juiste extensie en bestandsformaat geven.
 
