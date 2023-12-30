@@ -19,7 +19,7 @@ def foto_omzetter(filename: str, from_format: str, to_format: str):
             print(f"Error processing {filename}: {str(e)}")
 
 
-def muziek_omzetter(filename: str, from_format: str, to_format: str):
+def audio_omzetter(filename: str, from_format: str, to_format: str):
     if filename.lower().endswith(from_format):
         try:
             raw_audio = AudioSegment.from_file(f"{filename}", format=from_format)
@@ -34,7 +34,7 @@ def muziek_omzetter(filename: str, from_format: str, to_format: str):
             print(f"Error processing {filename}: {str(e)}")
 
 
-def convert_video(filename, from_format, to_format):
+def video_omzetter(filename, from_format, to_format):
     if filename.lower().endswith(from_format):
         try:
             vid = ffmpeg.input(filename)
