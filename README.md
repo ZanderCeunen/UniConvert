@@ -9,7 +9,7 @@ Met deze applicatie kan je jouw bestanden de juiste extensie en bestandsformaat 
 <img src='https://img.shields.io/badge/PyCharm-000000.svg?&style=for-the-badge&logo=PyCharm&logoColor=white' />
 
 ### Medewerkers
-<a href="https://github.com/Kobiboy">Kobiboy</a>,   <a href="https://github.com/LeniBleux">Leni Bleux</a> en <a href="">Zander Ceunen</a>
+<a href="https://github.com/Kobiboy">Kobiboy</a>,   <a href="https://github.com/LeniBleux">Leni Bleux</a> en <a href="https://github.com/ZanderCeunen">Zander Ceunen</a>
 ### Hoe gebruiken?
 1. Download de laatste release hier of van onze github pagina.
 2. Pak het zip bestand uit en plaats de UniConvert.exe file in de map met jouw bestanden.
