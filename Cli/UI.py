@@ -5,7 +5,7 @@ import os
 class Numcheck:
     def picture(number):
         # Lijst met ondersteunde extensies maar 0 geen waarden geven.
-        extensies = [None, "jpeg", "png", "jpg", "gif", "heif", "Webp", "bmp", "tiff", "ico"]
+        extensies = [None, "jpeg", "png", "jpg", "gif", "heif", "webp", "bmp", "tiff", "ico"]
         return extensies[number]
 
     def video(number):
