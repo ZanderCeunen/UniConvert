@@ -9,6 +9,7 @@ def foto_omzetter(filename: str, from_format: str, to_format: str):
         try:
             with Image.open(filename) as img:
                 # Maak bestandsnaam met juiste extensie
+                filename = filename.split("/")[-1]
                 uitvoer_bestandsnaam = filename.split(".")[0] + "." + to_format
 
                 # Sla de foto op in het nieuwe formaat met juiste extensie.
@@ -24,6 +25,7 @@ def audio_omzetter(filename: str, from_format: str, to_format: str):
         try:
             raw_audio = AudioSegment.from_file(f"{filename}", format=from_format)
             # Maak bestandsnaam met juiste extensie
+            filename = filename.split("/")[-1]
             uitvoer_bestandsnaam = filename.split(".")[0] + "." + to_format
 
             # Sla de foto op in het nieuwe formaat met juiste extensie.
@@ -39,9 +41,10 @@ def video_omzetter(filename, from_format, to_format):
         try:
             vid = ffmpeg.input(filename)
             # Change filename to match new extension
-            export_filename = filename.split(".")[0] + "." + to_format
+            filename = filename.split("/")[-1]
+            uitvoer_bestandsnaam = filename.split(".")[0] + "." + to_format
             # Save video in new extension
-            vid = ffmpeg.output(vid, export_filename)
+            vid = ffmpeg.output(vid, uitvoer_bestandsnaam)
             vid.run()
         except Exception as e:
             # Geef error weer voor debugging
