@@ -1,13 +1,21 @@
 import tkinter as tk
+from tkinter import ttk
+from customtkinter import *
 from tkinter.filedialog import askopenfilenames
 import Core
+import webbrowser
 
 
 def extensionWindow(files, processType):
-    loadingLabel = tk.Label(window, text="Files are being converted...", font=("Arial", 15))
-    newExtensionText = tk.Label(text="What is the new extension? (Write as: png)", font=("Arial", 15))
-    newExtensions = tk.Entry(font=("Arial", 10))
-    newExtensionEnter = tk.Button(text="Confirm", command=lambda: [loadingLabel.grid(column=0, row=2, sticky="ew", columnspan=3), window.update(), type_process(files, newExtensions.get(), processType)])
+    ttk.Style().theme_use("vista")
+    loadingLabel = tk.Label(window, text="Files are being converted...", font=("Arial", 15), bg="white")
+    newExtensionText = tk.Label(text="What is the new extension? (Write as: png)", font=("Arial", 15), bg="white")
+    newExtensions = CTkEntry(master=window, font=("Arial", 20), fg_color="white")
+    newExtensionEnter = ttk.Button(master=window, text="Confirm",
+                                   command=lambda: [loadingLabel.grid(column=0, row=3, sticky="ew", columnspan=3),
+                                                   window.update(),
+                                                   type_process(files, newExtensions.get(), processType)],
+                                   cursor="hand2")
 
     imageLabel.grid_remove()
     videoLabel.grid_remove()
@@ -16,10 +24,11 @@ def extensionWindow(files, processType):
     videoButton.grid_remove()
     audioButton.grid_remove()
     typeLabel.grid_remove()
+    buttonFrame.grid_remove()
 
-    newExtensionText.grid(column=0, row=1, sticky="w")
-    newExtensions.grid(column=1, row=1, sticky="w")
-    newExtensionEnter.grid(column=2, row=1, sticky="w")
+    newExtensionText.grid(column=0, row=2, sticky="w")
+    newExtensions.grid(column=1, row=2, sticky="w")
+    newExtensionEnter.grid(column=2, row=2, sticky="w")
 
 
 def type_process(files, newExtension, fileOmzetter):
@@ -47,16 +56,21 @@ def audio_clicked():
         extensionWindow(files, Core.audio_omzetter)
 
 
+def callback(event):
+    webbrowser.open_new("https://github.com/ZanderCeunen/UniConvert")
+
+
 # Window settings
 window = tk.Tk()
 window.title("Uni-Convert")
+window.configure(bg="white")
 
 # Getting screen width and height of display
 width = window.winfo_screenwidth()
 height = window.winfo_screenheight()
 # Setting tkinter window size
 
-window.geometry("%dx%d" % (width/2, height/2))
+window.geometry("%dx%d" % (width / 1.8, height / 1.8))
 window.resizable()
 
 # Column and row settings
@@ -68,40 +82,59 @@ window.grid_rowconfigure(2, weight=1)
 window.grid_columnconfigure(2, weight=1)
 window.grid_rowconfigure(3, weight=1)
 window.grid_rowconfigure(4, weight=1)
+window.grid_rowconfigure(5, weight=1)
+
+gitFrame = tk.Frame(window, bg="white")
+buttonFrame = tk.Frame(window, bg="white")
+
+buttonFrame.grid_columnconfigure(0, weight=1)
+buttonFrame.grid_columnconfigure(1, weight=1)
+buttonFrame.grid_columnconfigure(2, weight=1)
 
 # Images for buttons
 audioPicture = tk.PhotoImage(file="Icon_Images/Audio.png")
 videoPicture = tk.PhotoImage(file="Icon_Images/Video.png")
 imagePicture = tk.PhotoImage(file="Icon_Images/Image.png")
 
+gitHubPicture = tk.PhotoImage(file="Icon_Images/GitHub.png")
+gitHubLabel = tk.Label(gitFrame, image=gitHubPicture, bg="white", cursor="hand2")
+gitVersion = tk.Label(gitFrame, text="v1.0 stable", bg="white")
+gitHubLabel.bind("<Button-1>", callback)
+
 # Create attributes
 # Labels
-title = tk.Label(window, text="Welcome to \nUni-Convert!", font=("Arial", 50))
-typeLabel = tk.Label(text="Which kind of files would you like to convert?", font=("Arial", 20))
+title = tk.Label(window, text="Welcome to \nUni-Convert!", font=("Arial", 50), bg="white")
+typeLabel = tk.Label(text="Which kind of files would you like to convert?", font=("Arial", 20), bg="white")
 
-imageLabel = tk.Label(text="Image", font=("Arial", 20))
-videoLabel = tk.Label(text="Video", font=("Arial", 20))
-audioLabel = tk.Label(text="Audio", font=("Arial", 20))
+imageLabel = tk.Label(buttonFrame, text="Image", font=("Arial", 20), bg="white")
+videoLabel = tk.Label(buttonFrame, text="Video", font=("Arial", 20), bg="white")
+audioLabel = tk.Label(buttonFrame, text="Audio", font=("Arial", 20), bg="white")
 
 # Buttons
-imageButton = tk.Button(text="Image", image=imagePicture, command=image_clicked)
-videoButton = tk.Button(text="Video", image=videoPicture, command=video_clicked)
-audioButton = tk.Button(text="Audio", image=audioPicture, command=audio_clicked)
+imageButton = tk.Button(buttonFrame, text="Image", image=imagePicture, command=image_clicked, bg="white", border="0",
+                        cursor="hand2")
+videoButton = tk.Button(buttonFrame, text="Video", image=videoPicture, command=video_clicked, bg="white", border="0",
+                        cursor="hand2")
+audioButton = tk.Button(buttonFrame, text="Audio", image=audioPicture, command=audio_clicked, bg="white", border="0",
+                        cursor="hand2")
 
 # Grid attributes
+gitFrame.grid(column=0, row=0, sticky="w")
+gitHubLabel.grid(column=0, row=0)
+gitVersion.grid(column=1, row=0)
+buttonFrame.grid(column=0, row=3, columnspan=3)
 # Grid labels
-title.grid(column=0, row=0, columnspan=3)
-typeLabel.grid(column=0, row=1, columnspan=3)
+title.grid(column=0, row=1, columnspan=3)
+typeLabel.grid(column=0, row=2, columnspan=3)
 
 # Grid buttons
-imageButton.grid(column=0, row=3)
-videoButton.grid(column=1, row=3)
-audioButton.grid(column=2, row=3)
+imageButton.grid(column=0, row=0)
+videoButton.grid(column=1, row=0)
+audioButton.grid(column=2, row=0)
 
-imageLabel.grid(column=0, row=4)
-videoLabel.grid(column=1, row=4)
-audioLabel.grid(column=2, row=4)
-
+imageLabel.grid(column=0, row=1)
+videoLabel.grid(column=1, row=1)
+audioLabel.grid(column=2, row=1)
 
 # Run application
 window.mainloop()
