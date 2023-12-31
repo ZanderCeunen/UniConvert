@@ -5,7 +5,7 @@ import os
 class Numcheck:
     def picture(number):
         # Lijst met ondersteunde extensies maar 0 geen waarden geven.
-        extensies = [None, "jpeg", "png", "jpg", "gif", "heif", "webp", "bmp", "tiff", "ico"]
+        extensies = [None, "jpeg", "png", "jpg", "gif", "heic", "webp", "bmp", "tiff", "ico"]
         return extensies[number]
 
     def video(number):
@@ -13,7 +13,7 @@ class Numcheck:
         return extensies[number]
 
     def audio(number):
-        extensies = [None, "mp3", "m4a", "ogg", "wav", "m4p", "raw", "m4p", "wmv", "cda"]
+        extensies = [None, "mp3", "m4a", "ogg", "wav", "m4p", "raw", "webm", "wmv", "cda"]
         return extensies[number]
 
 
@@ -55,33 +55,29 @@ def getfilenames():
 # Printing ASCII graphics.
 #Greetings
 
-print("""                                                                                                                                                                               
-  ,----..                                                       ___                        
- /   /   \                                                    ,--.'|_                      
-|   :     :  ,---.        ,---,                      __  ,-.  |  | :,'             __  ,-. 
-.   |  ;. / '   ,'\   ,-+-. /  |     .---.         ,' ,'/ /|  :  : ' :           ,' ,'/ /| 
-.   ; /--` /   /   | ,--.'|'   |   /.  ./|  ,---.  '  | |' |.;__,'  /     ,---.  '  | |' | 
-;   | ;   .   ; ,. :|   |  ,"' | .-' . ' | /     \ |  |   ,'|  |   |     /     \ |  |   ,' 
-|   : |   '   | |: :|   | /  | |/___/ \: |/    /  |'  :  /  :__,'| :    /    /  |'  :  /   
-.   | '___'   | .; :|   | |  | |.   \  ' .    ' / ||  | '     '  : |__ .    ' / ||  | '    
-'   ; : .'|   :    ||   | |  |/  \   \   '   ;   /|;  : |     |  | '.'|'   ;   /|;  : |    
-'   | '/  :\   \  / |   | |--'    \   \  '   |  / ||  , ;     ;  :    ;'   |  / ||  , ;    
-|   :    /  `----'  |   |/         \   \ |   :    | ---'      |  ,   / |   :    | ---'     
- \   \ .'           '---'           '---" \   \  /             ---`-'   \   \  /           
-  `---`                                    `----'                        `----'            """)
-print(""" 
- +-+-+-+-+-+-+-+ +-+ +-+-+-+-+-+-+-+-+-+-+-+-+
- |k|o|b|i|b|o|y| |&| |Z|a|n|d|e|r|C|e|u|n|e|n|
- +-+-+-+-+-+-+-+ +-+ +-+-+-+-+-+-+-+-+-+-+-+-+ 
+print(""" __    __            __         ______                                                      __     
+|  \  |  \          |  \       /      \                                                    |  \    
+| $$  | $$ _______   \$$      |  $$$$$$\  ______   _______  __     __   ______    ______  _| $$_   
+| $$  | $$|       \ |  \      | $$   \$$ /      \ |       \|  \   /  \ /      \  /      \|   $$ \  
+| $$  | $$| $$$$$$$\| $$      | $$      |  $$$$$$\| $$$$$$$\\$$\ /  $$|  $$$$$$\|  $$$$$$ $$$$$$  
+| $$  | $$| $$  | $$| $$      | $$   __ | $$  | $$| $$  | $$ \$$\  $$ | $$    $$| $$   \$$ | $$ __ 
+| $$__/ $$| $$  | $$| $$      | $$__/  \| $$__/ $$| $$  | $$  \$$ $$  | $$$$$$$$| $$       | $$|  
+ \$$    $$| $$  | $$| $$       \$$    $$ \$$    $$| $$  | $$   \$$$    \$$     \| $$        \$$  $$
+  \$$$$$$  \$$   \$$ \$$        \$$$$$$   \$$$$$$  \$$   \$$    \$      \$$$$$$$ \$$         \$$$$ 
+                                                                                                                                                                                              
++-+-+-+-+-+-+-+ +-+ +-+-+-+-+-+-+-+-+-+-+-+-+
+|k|o|b|i|b|o|y| |&| |Z|a|n|d|e|r|C|e|u|n|e|n|
++-+-+-+-+-+-+-+ +-+ +-+-+-+-+-+-+-+-+-+-+-+-+ 
+Kijk op https://github.com/ZanderCeunen/file-converter voor meer info.
 """)
 
-print("""
+print("""Welk type bestanden wil je omzetten?
 +----------+----------+-----------+
 | 1 Video  |  2 Audio |  3 Foto's |
 +----------+----------+-----------+""")
 # Welke converter moet worden gebruikt.
 while True:
-    soort_bestand = int(input("Welk type bestand(en) wil je omzetten? Nummer:"))
+    soort_bestand = int(input("Nummer:"))
     if 5 > soort_bestand > 0:
         break
     else:
@@ -89,12 +85,11 @@ while True:
 
 if soort_bestand == 1:
     # Als foto geef de ondersteunde extensies
-    print("""
-        +-------+--------+--------+
-        | 1 mp4 | 4 webm | 7 m4p  |
-        | 2 m4v | 5 gif  | 8 wmv  |
-        | 3 ogv | 6 avi  | 9 mov  |
-        +-------+--------+--------+""")
+    print("""+-------+--------+--------+
+| 1 mp4 | 4 webm | 7 m4p  |
+| 2 m4v | 5 gif  | 8 wmv  |
+| 3 ogv | 6 avi  | 9 mov  |
++-------+--------+--------+""")
     while True:  # Zet nummer om in extensie voor de input bestanden.
         gekozen_input_formaat_nummer = int(input("Welke extensie heeft/hebben het/de invoer bestand(en)? Nummer:"))
         if 10 > gekozen_input_formaat_nummer > 0:
@@ -118,12 +113,11 @@ if soort_bestand == 1:
         Core.video_omzetter(filename, gekozen_input_formaat_extensie, gekozen_output_formaat_extensie)
 elif soort_bestand == 2:
     # Als foto geef de ondersteunde extensies
-    print("""
-        +-------+-------+--------+
-        | 1 mp3 | 4 wav | 7 webm |
-        | 2 m4a | 5 m4p | 8 msv  |
-        | 3 ogg | 6 raw | 9 cda  |
-        +-------+-------+--------+""")
+    print("""+-------+-------+--------+
+| 1 mp3 | 4 wav | 7 webm |
+| 2 m4a | 5 m4p | 8 msv  |
+| 3 ogg | 6 raw | 9 cda  |
++-------+-------+--------+""")
     while True:  # Zet nummer om in extensie voor de input bestanden.
         gekozen_input_formaat_nummer = int(input("Welke extensie heeft/hebben het/de invoer bestand(en)? Nummer:"))
         if 10 > gekozen_input_formaat_nummer > 0:
@@ -147,12 +141,11 @@ elif soort_bestand == 2:
         Core.audio_omzetter(filename, gekozen_input_formaat_extensie, gekozen_output_formaat_extensie)
 elif soort_bestand == 3:
     # Als foto geef de ondersteunde extensies
-    print("""
-    +--------+--------+--------+
-    | 1 jpeg | 4 gif  | 7 bmp  |
-    | 2 png  | 5 heif | 8 tiff |
-    | 3 jpg  | 6 webp | 9 ico  |
-    +--------+--------+--------+""")
+    print("""+--------+--------+--------+
+| 1 jpeg | 4 gif  | 7 bmp  |
+| 2 png  | 5 heic | 8 tiff |
+| 3 jpg  | 6 webp | 9 ico  |
++--------+--------+--------+""")
     while True: # Zet nummer om in extensie voor de input bestanden.
         gekozen_input_formaat_nummer = int(input("Welke extensie heeft/hebben het/de invoer bestand(en)? Nummer:"))
         if 10 > gekozen_input_formaat_nummer > 0:

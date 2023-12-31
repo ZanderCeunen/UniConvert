@@ -11,9 +11,9 @@ def foto_omzetter(filename: str, from_format: str, to_format: str):
                 # Maak bestandsnaam met juiste extensie
                 filename = filename.split("/")[-1]
                 uitvoer_bestandsnaam = filename.split(".")[0] + "." + to_format
-
+                if img.mode in ("RGBA", "P"): img = img.convert("RGB")
                 # Sla de foto op in het nieuwe formaat met juiste extensie.
-                img.save(os.path.join(uitvoer_bestandsnaam), to_format)
+                img.save(os.path.join(uitvoer_bestandsnaam))
 
         except Exception as e:
             # Geef error weer voor debugging.
