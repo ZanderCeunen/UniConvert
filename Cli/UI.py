@@ -1,3 +1,4 @@
+import sys
 import Core
 import os
 
@@ -35,7 +36,7 @@ def getfilenames():
 
     if keuze_bestandsmethode == 1:
         # Alle bestanden toevoegen aan de lijst van de map waar script nu instaat.
-         lijst_bestanden = os.listdir(os.path.dirname(os.path.realpath(__file__)))
+         lijst_bestanden = os.listdir(os.path.dirname(sys.executable))
          return lijst_bestanden
     elif keuze_bestandsmethode == 2:
         print("Geef de naam van het bestand(en) als het bestand zich in dezelfde map bevind als de applicatie.")
@@ -46,10 +47,10 @@ def getfilenames():
             # Gebruiker laten toevoegen
             lijst_bestanden += [input("Naam/pad?:")]
             nog = input("Wil je nog bestanden ingeven Y/N?:")
-            if nog == "Y" or "y" or "J" or "j":
-                continue
-            else:
+            if nog == "N" or "n":
                 break
+            else:
+                continue
         return lijst_bestanden
 
 # Printing ASCII graphics.
