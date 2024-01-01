@@ -13,8 +13,8 @@ def extensionWindow(files, processType):
     newExtensions = CTkEntry(master=window, font=("Arial", 20), fg_color="white")
     newExtensionEnter = ttk.Button(master=window, text="Confirm",
                                    command=lambda: [loadingLabel.grid(column=0, row=3, sticky="ew", columnspan=3),
-                                                   window.update(),
-                                                   type_process(files, newExtensions.get(), processType)],
+                                                    window.update(),
+                                                    type_process(files, newExtensions.get(), processType)],
                                    cursor="hand2")
 
     imageLabel.grid_remove()
@@ -111,11 +111,11 @@ videoLabel = tk.Label(buttonFrame, text="Video", font=("Arial", 20), bg="white")
 audioLabel = tk.Label(buttonFrame, text="Audio", font=("Arial", 20), bg="white")
 
 # Buttons
-imageButton = tk.Button(buttonFrame, text="Image", image=imagePicture, command=image_clicked, bg="white", border="0",
+imageButton = tk.Button(buttonFrame, image=imagePicture, command=image_clicked, bg="white", border="0",
                         cursor="hand2")
-videoButton = tk.Button(buttonFrame, text="Video", image=videoPicture, command=video_clicked, bg="white", border="0",
+videoButton = tk.Button(buttonFrame, image=videoPicture, command=video_clicked, bg="white", border="0",
                         cursor="hand2")
-audioButton = tk.Button(buttonFrame, text="Audio", image=audioPicture, command=audio_clicked, bg="white", border="0",
+audioButton = tk.Button(buttonFrame, image=audioPicture, command=audio_clicked, bg="white", border="0",
                         cursor="hand2")
 
 # Grid attributes
