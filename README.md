@@ -29,7 +29,7 @@ Met deze applicatie kan je jouw bestanden de juiste extensie en bestandsformaat 
   - 1. Plaats de UniConvert in de map met je bestanden. In dit voorbeeld een mapje met foto's. 
   - 2. Je wordt begroet door dit scherm. ![Welkoms scherm](https://github.com/ZanderCeunen/UniConvert/blob/main/Cli/Images/Welkom.png)
   - 3. In dit geval kiezen we voor optie 3 want we willen graag foto's omzetten.
-  - 4. Onze foto's zijn momenteel png, we zouden deze graag omzetten naar jpeg. We typen de nummers 2 en 1 in en krijgen volgend resultaat: ![Resultaat](https://github.com/ZanderCeunen/UniConvert/blob/main/Cli/Images/resultaat.png)
+  - 4. Onze foto's zijn momenteel png, we zouden deze graag omzetten naar jpeg. We typen de nummers 2 en 1 in en krijgen dit: ![Resultaat](https://github.com/ZanderCeunen/UniConvert/blob/main/Cli/Images/resultaat.png)
   - 5. Als laatste kiezen we nog voor alle bestanden in onze map door 1 te typen. 
   - 6. Onze foto's zijn nu omgezet naar jpeg.
 
