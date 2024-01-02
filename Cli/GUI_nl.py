@@ -4,7 +4,8 @@ from customtkinter import *
 from tkinter.filedialog import askopenfilenames
 import Core
 import webbrowser
-
+import os
+import sys
 
 def extensionWindow(files, processType):
     ttk.Style().theme_use("vista")
@@ -60,10 +61,25 @@ def callback(event):
     webbrowser.open_new("https://github.com/ZanderCeunen/UniConvert")
 
 
+def resource_path(relative_path):
+    # get path for retard pyinstaller
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        # It's what their docs say
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
 # Window settings
 window = tk.Tk()
 window.title("Uni-Convert")
 window.configure(bg="white")
+klein_logo = tk.PhotoImage(file=resource_path("logo_16.png"))
+groot_logo = tk.PhotoImage(file=resource_path("logo_32.png"))
+window.iconphoto(False, groot_logo, klein_logo)
 
 # Getting screen width and height of display
 width = window.winfo_screenwidth()
@@ -92,11 +108,11 @@ buttonFrame.grid_columnconfigure(1, weight=1)
 buttonFrame.grid_columnconfigure(2, weight=1)
 
 # Images for buttons
-audioPicture = tk.PhotoImage(file="Icon_Images/Audio.png")
-videoPicture = tk.PhotoImage(file="Icon_Images/Video.png")
-imagePicture = tk.PhotoImage(file="Icon_Images/Image.png")
+audioPicture = tk.PhotoImage(file=resource_path("Audio.png"))
+videoPicture = tk.PhotoImage(file=resource_path("Video.png"))
+imagePicture = tk.PhotoImage(file=resource_path("Image.png"))
 
-gitHubPicture = tk.PhotoImage(file="Icon_Images/GitHub.png")
+gitHubPicture = tk.PhotoImage(file=resource_path("GitHub.png"))
 gitHubLabel = tk.Label(gitFrame, image=gitHubPicture, bg="white", cursor="hand2")
 gitVersion = tk.Label(gitFrame, text="v1.0 stable", bg="white")
 gitHubLabel.bind("<Button-1>", callback)
