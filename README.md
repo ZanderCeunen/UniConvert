@@ -10,6 +10,8 @@ Met deze applicatie kan je jouw bestanden de juiste extensie en bestandsformaat 
 
 ### Medewerkers
 <a href="https://github.com/KobeMotmans">KobeMotmans</a>,   <a href="https://github.com/LeniBleux">Leni Bleux</a> en <a href="https://github.com/ZanderCeunen">Zander Ceunen</a>
+
+<a href="https://www.buymeacoffee.com/KobeMotmans" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="25" width="120"></a>
 ### Hoe gebruiken?
 1. Download de laatste release hier of van onze github pagina.
 2. Als je voor het eerst deze applicatie gebruikt voer je Installeren.cmd best uit als administrator.
