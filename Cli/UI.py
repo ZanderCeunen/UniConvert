@@ -10,7 +10,7 @@ class Numcheck:
         return extensies[number]
 
     def video(number):
-        extensies = [None,  "mp4", "m4v", "ogv", "webm", "gif", "avi", "m4p", "wmv", "mov"]
+        extensies = [None,  "mp4", "m4v", "ogv", "webm", "gif", "avi", "mp3", "wmv", "mov"]
         return extensies[number]
 
     def audio(number):
@@ -116,7 +116,7 @@ elif soort_bestand == 2:
     # Als foto geef de ondersteunde extensies
     print("""+-------+-------+--------+
 | 1 mp3 | 4 wav | 7 webm |
-| 2 m4a | 5 m4p | 8 msv  |
+| 2 m4a | 5 mp3 | 8 msv  |
 | 3 ogg | 6 raw | 9 cda  |
 +-------+-------+--------+""")
     while True:  # Zet nummer om in extensie voor de input bestanden.
