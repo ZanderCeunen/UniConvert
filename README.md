@@ -19,6 +19,12 @@ Met deze applicatie kan je jouw bestanden de juiste extensie en bestandsformaat 
 4. Dubbelklik en volg de instructies op het scherm.
 
 ### Een simpel voorbeeld
+- #### GUI
+  - 1. Dubbelklik op UniConvert_gui.exe 
+  - 2. Je krijgt dit startscherm. ![Welkoms scherm](https://github.com/ZanderCeunen/UniConvert/blob/main/Cli/Images/Welkom_gui.png)
+  - 3. Deze keer kiezen we voor video 
+  - 4. Kies de bestanden en type de gewenste extensie in bv. avi of webm.
+  - 5. Je bestanden worden nu omgezet.
 - #### UI
   - 1. Plaats de UniConvert in de map met je bestanden. In dit voorbeeld een mapje met foto's. 
   - 2. Je wordt begroet door dit scherm. ![Welkoms scherm](https://github.com/ZanderCeunen/UniConvert/blob/main/Cli/Images/Welkom.png)
@@ -26,12 +32,7 @@ Met deze applicatie kan je jouw bestanden de juiste extensie en bestandsformaat 
   - 4. Onze foto's zijn momenteel png, we zouden deze graag omzetten naar jpeg. We typen de nummers 2 en 1 in en krijgen volgend resultaat: ![Resultaat](https://github.com/ZanderCeunen/UniConvert/blob/main/Cli/Images/resultaat.png)
   - 5. Als laatste kiezen we nog voor alle bestanden in onze map door 1 te typen. 
   - 6. Onze foto's zijn nu omgezet naar jpeg.
-- #### GUI
-  - 1. Dubbelklik op UniConvert_gui.exe 
-  - 2. Je krijgt dit startscherm. ![Welkoms scherm](https://github.com/ZanderCeunen/UniConvert/blob/main/Cli/Images/Welkom_gui.png)
-  - 3. Deze keer kiezen we voor video 
-  - 4. Kies de bestanden en type de gewenste extensie in bv. avi of webm.
-  - 5. Je bestanden worden nu omgezet.
+
 ### Licentie
 <a href="https://www.gnu.org/licenses/gpl-3.0.nl.html">GPLv3</a>
 Ons project combineert de kracht van een aantal andere projecten. Deze projecten behouden hun eigen licentie. Bekijk hun licenties via volgende links.
