@@ -89,7 +89,7 @@ while True:
 if soort_bestand == 1:
     # Als foto geef de ondersteunde extensies
     print("""+-------+--------+--------+
-| 1 mp4 | 4 webm | 7 m4p  |
+| 1 mp4 | 4 webm | 7 mp3  |
 | 2 m4v | 5 gif  | 8 wmv  |
 | 3 ogv | 6 avi  | 9 mov  |
 +-------+--------+--------+""")
