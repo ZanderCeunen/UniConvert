@@ -19,6 +19,12 @@ This application allows you to give your files the correct extension and file fo
 4. Double-click and follow the on-screen instructions.
 
 ### A simple example
+- #### GUI
+  - 1. Double click on UniConvert_gui.exe 
+  - 2. You will get this home screen. ![Welcome screen](https://github.com/ZanderCeunen/UniConvert/blob/main/Cli/Images/Welcome_gui.png)
+  - 3. This time we choose video 
+  - 4. Choose the files and type in the desired extension e.g. avi or webm.
+  - 5. Your files will now be converted.
 - #### UI
   - 1. Place the UniConvert in the folder containing your files. In this example, a folder with photos. 
   - 2. You will be greeted by this screen. ![Welcome screen](https://github.com/ZanderCeunen/UniConvert/blob/main/Cli/Images/Welcome.png)
@@ -26,13 +32,6 @@ This application allows you to give your files the correct extension and file fo
   - 4. Our photos are currently png, we would like to convert them to jpeg. We type in the numbers 2 and 1 and get following result: ![Result](https://github.com/ZanderCeunen/UniConvert/blob/main/Cli/Images/Result.png)
   - 5. Finally, we choose all the files in our folder by typing 1. 
   - 6. Our pictures are now converted to jpeg.
-- #### GUI
-  - 1. Double click on UniConvert_gui.exe 
-  - 2. You will get this home screen. ![Welcome screen](https://github.com/ZanderCeunen/UniConvert/blob/main/Cli/Images/Welcome_gui.png)
-  - 3. This time we choose video 
-  - 4. Choose the files and type in the desired extension e.g. avi or webm.
-  - 5. Your files will now be converted.
-
 
 ### License
 <a href="https://www.gnu.org/licenses/gpl-3.0.nl.html">GPLv3</a>
