@@ -10,8 +10,9 @@ def foto_omzetter(filename: str, from_format: str, to_format: str):
             with Image.open(filename) as img:
                 # Maak bestandsnaam met juiste extensie
                 filename = filename.split("/")[-1]
-                uitvoer_bestandsnaam = filename.split(".")[0] + "." + to_format
-                if img.mode in ("RGBA", "P"): img = img.convert("RGB")
+                uitvoer_bestandsnaam = filename.split(".")[0] + "." + to_format.lower()
+                if img.mode in ("RGBA", "P"):
+                    img = img.convert("RGB")
                 # Sla de foto op in het nieuwe formaat met juiste extensie.
                 img.save(os.path.join(uitvoer_bestandsnaam))
 
@@ -26,7 +27,7 @@ def audio_omzetter(filename: str, from_format: str, to_format: str):
             raw_audio = AudioSegment.from_file(f"{filename}", format=from_format)
             # Maak bestandsnaam met juiste extensie
             filename = filename.split("/")[-1]
-            uitvoer_bestandsnaam = filename.split(".")[0] + "." + to_format
+            uitvoer_bestandsnaam = filename.split(".")[0] + "." + to_format.lower()
 
             # Sla de foto op in het nieuwe formaat met juiste extensie.
             raw_audio.export(uitvoer_bestandsnaam, format=to_format)
@@ -42,7 +43,7 @@ def video_omzetter(filename, from_format, to_format):
             vid = ffmpeg.input(filename)
             # Change filename to match new extension
             filename = filename.split("/")[-1]
-            uitvoer_bestandsnaam = filename.split(".")[0] + "." + to_format
+            uitvoer_bestandsnaam = filename.split(".")[0] + "." + to_format.lower()
             # Save video in new extension
             vid = ffmpeg.output(vid, uitvoer_bestandsnaam)
             vid.run()
