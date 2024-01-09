@@ -47,7 +47,7 @@ def image_clicked():
 
 
 def video_clicked():
-    files = askopenfilenames(filetypes=[("Video Files", ".mp4 .m4v .ogv .webm .gif .avi .m4p .wmv .mov .tf")])
+    files = askopenfilenames(filetypes=[("Video Files", ".mp4 .m4v .ogv .webm .gif .avi .m4p .wmv .mov .ts")])
     if files != "":
         extensionWindow(files, Core.video_omzetter)
 
